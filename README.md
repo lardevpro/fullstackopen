@@ -1,4 +1,5 @@
 # fullstackopen
+<<<<<<< HEAD
 Parte 1 del curso fullstack Universidad de Helsinki
 
 📚 Full Stack Open - Parte 0
@@ -34,3 +35,6 @@ Editor en línea como Mermaid Live Editor.
 📌 Enlace al curso
 Si estás interesado en este curso, puedes encontrarlo en:
 🔗 [Full Stack Open](https://fullstackopen.com/es/part0/informacion_general#canal-de-discord-para-el-curso)
+=======
+Parte 1 del curso fullstack Universidad de Helsinki 0.1.-0.6.
+>>>>>>> 63999e28eb96aff33d262060b16158b2dd93d00b
