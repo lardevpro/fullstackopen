@@ -9,19 +9,23 @@ const Header = (prompt) => {
   )
 }
 
+const Part = (prompt) => {
+  return(
+  <div>
+    <p>
+      {prompt.part} {prompt.exercise}
+    </p>
+  </div>
+  )
+}
+
 const Content = (prompt) => {
   console.log(prompt)
   return(
     <div>
-        <p>
-          {prompt.part1} {prompt.exercises1}
-        </p>
-        <p>
-          {prompt.part2} {prompt.exercises2}
-        </p>
-        <p>
-          {prompt.part3} {prompt.exercises3}
-        </p>
+        <Part part={prompt.part1} exercise={prompt.exercises1}/>
+        <Part part={prompt.part2} exercise={prompt.exercises2}/>
+        <Part part={prompt.part3} exercise={prompt.exercises3}/>
     </div>
   )
 }
