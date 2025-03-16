@@ -1,41 +1,40 @@
-const Header = (prompt) => {
-  console.log(prompt)
+const Header = (props) => {
+  console.log(props)
   return (    
     <div>
       <h1>
-        {prompt.course}
+        {props.course.name}
       </h1>
     </div>
   )
 }
 
-const Part = (prompt) => {
+const Part = (props) => {
+  console.log(props)
   return(
   <div>
-    <p>
-      {prompt.part} {prompt.exercise}
-    </p>
+    <p>{props.parts[0].name} {props.parts[0].exercises}</p>
+    <p>{props.parts[1].name} {props.parts[1].exercises}</p>
+    <p>{props.parts[2].name} {props.parts[2].exercises}</p>
   </div>
   )
 }
 
-const Content = (prompt) => {
-  console.log(prompt)
+const Content = (props) => {
+  console.log(props)
   return(
     <div>
-        <Part part={prompt.part1} exercise={prompt.exercises1}/>
-        <Part part={prompt.part2} exercise={prompt.exercises2}/>
-        <Part part={prompt.part3} exercise={prompt.exercises3}/>
+        <Part parts={props.course.parts}/>
     </div>
   )
 }
 
-const Footer = (prompt) => {
-  console.log(prompt)
+const Total = (props) => {
+  console.log(props)
   return (
     <div>
       <p>
-        Number of exercises {prompt.exercises}
+        Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}
       </p>
     </div>
   )
@@ -44,27 +43,29 @@ const Footer = (prompt) => {
 
 const App = () => {
  
-  const course = 'Half Stack application development'
-  const parts = [
-    {
-      name: 'Fundamentals of React',
-      exercises: 10
-    },
-    {
-      name: 'Using props to pass data',
-      exercises: 7
-    },
-    {
-      name: 'State of a component',
-      exercises: 14
-    }
-  ]
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
 
   return (
     <div>
       <Header course={course} />
-      <Content part1={parts[0].name} exercises1={parts[0].exercises} part2={parts[1].name} exercises2={parts[1].exercises} part3={parts[2].name} exercises3={parts[2].exercises} />
-      <Footer exercises={parts[0].exercises + parts[1].exercises + parts[2].exercises}/>
+      <Content Part course={course} />
+      <Total parts={course.parts} /> 
     </div>
   )
 }
